@@ -26,12 +26,16 @@ func (s *ApiServer) PostUser(c *gin.Context) {
 }
 
 func (s *ApiServer) GetUsersUserId(c *gin.Context, userId int) {
-	h := handler.UserFindSpecific{}
+	h := handler.UserFindSpecific{
+		UserId: userId,
+	}
 	handler.Wrap(c, h.Hanlde)
 }
 
 func (s *ApiServer) PatchUsersUserId(c *gin.Context, userId int) {
-	h := handler.UserUpdate{}
+	h := handler.UserUpdate{
+		UserId: userId,
+	}
 	handler.Wrap(c, h.Hanlde)
 }
 

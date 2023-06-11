@@ -26,7 +26,8 @@ func New(port int) *http.Server {
 
 	// Use our validation middleware to check all requests against the
 	// OpenAPI schema.
-	r.Use(ginMiddleware.OapiRequestValidator(swagger), middleware.Error())
+	r.Use(ginMiddleware.OapiRequestValidator(swagger),
+		middleware.Error()) // ここに独自のmiddelwareをセットしていく
 
 	svr := NewAPI()
 	generated.RegisterHandlers(r, svr)

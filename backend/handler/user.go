@@ -11,10 +11,23 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type UserFindSpecific struct{}
+/*
+open-apiのparameterを受け取るために構造体のfieldを利用する
+
+	func (s *ApiServer) GetUsersUserId(c *gin.Context, userId int) {
+		h := handler.UserFindSpecific{
+			UserId: userId,
+		}
+		handler.Wrap(c, h.Hanlde)
+	}
+*/
+type UserFindSpecific struct {
+	UserId int
+}
 
 func (u *UserFindSpecific) Hanlde(ctx *gin.Context, r registry.Registry) (int, interface{}, error) {
 	fmt.Println("=========UserFindSpecific==========")
+	fmt.Printf("userid: %d\n", u.UserId)
 	res := generated.User{
 		Id: 1,
 		CreatedAt: &types.Date{
@@ -38,9 +51,12 @@ func (u *UserCreate) Hanlde(ctx *gin.Context, r registry.Registry) (int, interfa
 	return http.StatusCreated, nil, nil
 }
 
-type UserUpdate struct{}
+type UserUpdate struct {
+	UserId int
+}
 
 func (u *UserUpdate) Hanlde(ctx *gin.Context, r registry.Registry) (int, interface{}, error) {
 	fmt.Println("=========UserUpdate==========")
+	fmt.Printf("userid: %d\n", u.UserId)
 	return http.StatusOK, nil, nil
 }
