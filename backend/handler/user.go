@@ -48,6 +48,11 @@ type UserCreate struct{}
 
 func (u *UserCreate) Hanlde(ctx *gin.Context, r registry.Registry) (int, interface{}, error) {
 	fmt.Println("=========UserCreate==========")
+	req := generated.PostUserJSONRequestBody{}
+	if err := ctx.ShouldBind(&req); err != nil {
+		return http.StatusBadRequest, nil, err
+	}
+	fmt.Printf("%+v\n", req)
 	return http.StatusCreated, nil, nil
 }
 
