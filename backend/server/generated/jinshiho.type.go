@@ -41,12 +41,12 @@ type PostUserJSONBody struct {
 
 // PatchUsersUserIdJSONBody defines parameters for PatchUsersUserId.
 type PatchUsersUserIdJSONBody struct {
-	DateOfBirth *string `json:"dateOfBirth,omitempty"`
+	DateOfBirth *string `json:"date_of_birth,omitempty"`
 
 	// Email If a new email is given, the user's email verified property will be set to false.
 	Email     *string `json:"email,omitempty"`
-	FirstName *string `json:"firstName,omitempty"`
-	LastName  *string `json:"lastName,omitempty"`
+	FirstName *string `json:"first_name,omitempty"`
+	LastName  *string `json:"last_name,omitempty"`
 }
 
 // PostUserJSONRequestBody defines body for PostUser for application/json ContentType.

@@ -28,12 +28,12 @@ paths:
                 Get User Alice Smith:
                   value:
                     id: 142
-                    firstName: Alice
-                    lastName: Smith
+                    first_name: Alice
+                    last_name: Smith
                     email: alice.smith@gmail.com
-                    dateOfBirth: '1997-10-31'
-                    emailVerified: true
-                    signUpDate: '2019-08-24'
+                    date_of_birth: '1997-10-31'
+                    email_verified: true
+                    signup_date: '2019-08-24'
         '404':
           description: User Not Found
       servers:
@@ -56,19 +56,19 @@ paths:
             schema:
               type: object
               properties:
-                firstName:
+                first_name:
                   type: string
-                lastName:
+                last_name:
                   type: string
                 email:
                   type: string
                   description: 'If a new email is given, the user''s email verified property will be set to false.'
-                dateOfBirth:
+                date_of_birth:
                   type: string
             examples:
               Update First Name:
                 value:
-                  firstName: Rebecca
+                  first_name: Rebecca
               Update Email:
                 value:
                   email: rebecca@gmail.com
@@ -87,12 +87,12 @@ paths:
                 Updated User Rebecca Baker:
                   value:
                     id: 13
-                    firstName: Rebecca
-                    lastName: Baker
+                    first_name: Rebecca
+                    last_name: Baker
                     email: rebecca@gmail.com
-                    dateOfBirth: '1985-10-02'
-                    emailVerified: false
-                    createDate: '2019-08-24'
+                    date_of_birth: '1985-10-02'
+                    email_verified: false
+                    created_at: '2019-08-24'
         '404':
           description: User Not Found
         '409':
@@ -128,10 +128,10 @@ paths:
             examples:
               Create User Bob Fellow:
                 value:
-                  firstName: Bob
-                  lastName: Fellow
+                  first_name: Bob
+                  last_name: Fellow
                   email: bob.fellow@gmail.com
-                  dateOfBirth: '1996-08-24'
+                  date_of_birth: '1996-08-24'
       responses:
         '200':
           description: User Created
@@ -143,12 +143,12 @@ paths:
                 New User Bob Fellow:
                   value:
                     id: 12
-                    firstName: Bob
-                    lastName: Fellow
+                    first_name: Bob
+                    last_name: Fellow
                     email: bob.fellow@gmail.com
-                    dateOfBirth: '1996-08-24'
-                    emailVerified: false
-                    createDate: '2020-11-18'
+                    date_of_birth: '1996-08-24'
+                    email_verified: false
+                    created_at: '2020-11-18'
         '400':
           description: Missing Required Information
         '409':
@@ -206,12 +206,12 @@ components:
         - email_verified
       examples:
         - id: 142
-          firstName: Alice
-          lastName: Smith
+          first_name: Alice
+          last_name: Smith
           email: alice.smith@gmail.com
-          dateOfBirth: '1997-10-31'
-          emailVerified: true
-          signUpDate: '2019-08-24'
+          date_of_birth: '1997-10-31'
+          email_verified: true
+          signup_date: '2019-08-24'
     Project:
       type: object
       title: Project
