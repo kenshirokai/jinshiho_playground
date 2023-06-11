@@ -3,7 +3,7 @@ info:
   version: '1.0'
   title: jinshiho
 servers:
-  - url: 'http://localhost:3000'
+  - url: 'http://localhost:9000'
 paths:
   '/users/{userId}':
     get:
@@ -37,7 +37,7 @@ paths:
         '404':
           description: User Not Found
       servers:
-        - url: 'http://localhost:3000'
+        - url: 'http://localhost:9000'
     patch:
       summary: Update User Information
       description: Update the information of an existing user.
@@ -98,7 +98,7 @@ paths:
         '409':
           description: Email Already Taken
       servers:
-        - url: 'http://localhost:3000'
+        - url: 'http://localhost:9000'
   /users:
     post:
       summary: Create New User
@@ -154,7 +154,7 @@ paths:
         '409':
           description: Email Already Taken
       servers:
-        - url: 'http://localhost:3000'
+        - url: 'http://localhost:9000'
   /projects:
     get:
       summary: Your GET endpoint
@@ -169,7 +169,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/Project'
       servers:
-        - url: 'http://localhost:3000'
+        - url: 'http://localhost:9000'
 components:
   schemas:
     User:
